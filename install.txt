@@ -1,0 +1,21 @@
+npm init
+
+npm i gulp-cli -g
+
+npm i gulp del -D
+npm i gulp-file-include -D
+npm i gulp-replace -D
+npm i gulp-webp-html-nosvg -D
+npm i gulp-plumber -D
+npm i gulp-notify -D
+npm i browser-sync -D
+npm i sass gulp-sass -D 
+npm i gulp-rename -D
+npm i gulp-clean-css -D
+npm i gulp-autoprefixer -D
+npm i gulp-group-css-media-queries -D
+npm i gulp-webpcss -D
+npm i webp-converter@2.2.3 -D
+npm i webpack webpack-stream -D
+npm i gulp-imagemin -D
+npm i gulp-newer -D
