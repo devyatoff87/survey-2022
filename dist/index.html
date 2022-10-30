@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css?_v=20221025172137" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css?_v=20221030153324" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.min.css?_v=20221025172137">
+    <link rel="stylesheet" href="css/style.min.css?_v=20221030153324">
 </head>
 
 <body>
@@ -85,8 +85,9 @@
         <h2 class="mb-4 text-center">Wie hoch ist Ihre monatliche Wunschsumme bei Berufsunfähigkeit?</h2>
         <div class="range-step small-container border-light step-form">
     <form>
-        <label for="customRange3" class="form-label">Example range</label>
-        <input type="range" value="2" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+        <label for="custom-range" class="form-label">Example range</label>
+        <input name="custom-range" type="range" value="4" class="form-range" min="0" max="5" step="0.5"
+            id="customRange3">
     </form>
     <div class="d-flex justify-content-between mt-3">
         <div>1</div>
@@ -180,6 +181,12 @@
             minlength="2" data-msg-minlength="Eingabe zu kurz" tabindex="2">
         <label class="mt-2">dient zur genauen Berechnung Ihres Tarifs</label>
     </form>
+    <div class="warning-alert">
+    <div class="inner">
+        <h4></h4>
+        <p></p>
+    </div>
+</div>
 </div>
         <button class="btn btn-primary align-self-center mt-3">Weiter</button>
     </div>
@@ -196,6 +203,12 @@
             data-msg-maxlength="Eingabe scheint zu lange zu sein" tabindex="2">
         <label class="mt-2">dient zur genauen Berechnung Ihres Tarifs</label>
     </form>
+    <div class="warning-alert">
+    <div class="inner">
+        <h4></h4>
+        <p></p>
+    </div>
+</div>
 </div>
         <button class="btn btn-primary align-self-center mt-3">Zur Berechnung </button>
     </div>
@@ -219,41 +232,58 @@
 <section id="contact-form">
     <div class="d-flex flex-column justify-content-center">
         <h2 class="mb-4 text-center">Es wurden 3 optimale Angebote gefunden!</h2>
-        <div class="small-container">
+        <div class="small-container step-form">
     <h3>Jetzt 3 optimale Vorschläge für Ihre Absicherung</h3>
     <form>
         <div class="input-group">
             <label for="name">Vor- und Nachnamen</label>
-            <input w-100 name="name" type="text">
+            <input data-type="chars" w-100 name="name" type="text">
         </div>
         <div class="input-group w-50">
             <label for="email">E-Mail-Adresse</label>
-            <input name="email" type="text">
+            <input data-type="email" placeholder="emailadresse@mail.de" required="required"
+                data-msg-required="Pflichtfeld" data-msg-correctinput="Bitte, eine richtige E-Mail-Adresse eingeben"
+                name="email" type="email">
         </div>
         <div class="input-group w-50">
             <label for="phone">Beste Telefonnummer</label>
-            <input name="phone" type="text">
+            <input data-type="numbers" name="phone" type="text">
         </div>
         <div class="input-group w-50">
             <label for="address">Anschrift</label>
-            <input name="address" type="text">
+            <input data-type="chars" name="address" type="text">
         </div>
         <div class="input-group w-50">
             <label for="postcode">Postleitzahl</label>
-            <input name="postcode" type="text">
+            <input data-type="numbers" name="postcode" type="text">
         </div>
         <div>
             <label for=""></label>
-            <input type="submit" value="send">
+            <input class="btn mt-4" type="submit" value="send">
         </div>
     </form>
+</div>
+    </div>
+</section>
+
+<section id="final">
+    <div class="d-flex flex-column justify-content-center">
+        <h2 class="mb-4 text-center">Danke für das Ausfüllen</h2>
+        <div class="small-container">
+    <h3>Sie werden jetzt umgeleitet</h3>
+    <div class="load">
+        <hr />
+        <hr />
+        <hr />
+        <hr />
+    </div>
 </div>
     </div>
 </section>
     </div>
 
     <footer>
-        <script src="js/app.min.js?_v=20221025172137"></script>
+        <script src="js/app.min.js?_v=20221030153324"></script>
     </footer>
 </body>
 

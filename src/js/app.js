@@ -20,7 +20,7 @@ export function showCurrentSection() {
         if (count.count == index) {
             section.classList.add("show") + "!important";
             section.querySelectorAll(".step-card") && chooseCardValue(section);
-            section.querySelector(".step-form") && chooseFormValue(section);
+            section.querySelector(".step-form") && chooseFormValue(section, index);
         }
     })
 }

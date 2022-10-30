@@ -1,29 +1,31 @@
-<div class="small-container">
+<div class="small-container step-form">
     <h3>Jetzt 3 optimale Vorschläge für Ihre Absicherung</h3>
     <form>
         <div class="input-group">
             <label for="name">Vor- und Nachnamen</label>
-            <input w-100 name="name" type="text">
+            <input data-type="chars" w-100 name="name" type="text">
         </div>
         <div class="input-group w-50">
             <label for="email">E-Mail-Adresse</label>
-            <input name="email" type="text">
+            <input data-type="email" placeholder="emailadresse@mail.de" required="required"
+                data-msg-required="Pflichtfeld" data-msg-correctinput="Bitte, eine richtige E-Mail-Adresse eingeben"
+                name="email" type="email">
         </div>
         <div class="input-group w-50">
             <label for="phone">Beste Telefonnummer</label>
-            <input name="phone" type="text">
+            <input data-type="numbers" name="phone" type="text">
         </div>
         <div class="input-group w-50">
             <label for="address">Anschrift</label>
-            <input name="address" type="text">
+            <input data-type="chars" name="address" type="text">
         </div>
         <div class="input-group w-50">
             <label for="postcode">Postleitzahl</label>
-            <input name="postcode" type="text">
+            <input data-type="numbers" name="postcode" type="text">
         </div>
         <div>
             <label for=""></label>
-            <input type="submit" value="send">
+            <input class="btn mt-4" type="submit" value="send">
         </div>
     </form>
 </div>

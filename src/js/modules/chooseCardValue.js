@@ -4,11 +4,16 @@ import { defineProperty } from "./helper.js";
 export function chooseCardValue(section) {
 
     if (section.id == "kalkulieren" && section.classList.contains("show")) {
-        console.log("yes")
         setTimeout(() => {
             let newCount = count.count + 1;
             defineProperty(count, "count", newCount)
             showCurrentSection();
+        }, 4000)
+    }
+
+    if (section.id == "final" && section.classList.contains("show")) {
+        setTimeout(() => {
+            window.location.href = 'https://google.de';
         }, 4000)
     }
 

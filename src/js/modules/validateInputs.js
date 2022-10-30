@@ -1,49 +1,34 @@
-export function checkValidness(elm, val_) {
-    let val = val_.trim();
-    console.log(elm.dataset.type);
+import { nextStep, validateEmail, validateNumbers, validateChars, validateMinAndMax, validateMaxAndMinLength, validateMinLength, validateMaxLength, validateIfNotEmpty } from "./helper.js";
+let val;
 
-    if (val == null || val == "" || val == undefined) {
-        showWarning(elm.dataset.msgRequired);
-        return;
-    }
-    if (elm.minLength !== -1 && val.length < elm.minLength) {
-        showWarning(elm.dataset.msgMinlength);
-        return;
-    }
-    if (elm.maxLength !== -1 && val.length > elm.maxLength) {
-        showWarning(elm.dataset.msgMaxlength);
-        return;
-    }
-    if (elm.min !== -1 && val < elm.min && val > elm.max) {
-        showWarning(elm.dataset.msgCorrectinput);
-        return
-    }
+export function checkValidness(elms, section, index) {
 
-    if (elm.dataset.type !== -1 && elm.dataset.type == "numbers") {
-        val = parseInt(val)
-        let regex = /\d/;
-        if (regex.test(val) == false) {
-            showWarning(elm.dataset.msgCorrectinput);
-            return
-        }
-        return true
-    }
+    for (const elm_ in elms) {
+        const elm = elms[elm_];
+        val = elms[elm_].value;
+        let res;
 
-    if (elm.dataset.type !== -1 && elm.dataset.type == "chars") {
-        const regex = /^[a-zA-Z]*$/g;
-        if (!regex.test(val)) {
-            showWarning(elm.dataset.msgCorrectinput);
-            return
-        }
-        return true
+        res = validateIfNotEmpty(elm, val)
+        if (!res) return
+
+        res = validateMinLength(elm, val)
+        if (!res) return
+
+        res = validateMaxLength(elm, val)
+        if (!res) return
+
+        res = validateMinAndMax(elm, val)
+        if (!res) return
+
+        res = validateNumbers(elm, val)
+        if (!res) return
+
+        res = validateChars(elm, val)
+        if (!res) return
+
+        res = validateEmail(elm, val)
+        if (!res) return
 
     }
-
-    else {
-        return true
-    }
-}
-
-function showWarning(msg) {
-    console.log(msg)
+    nextStep(section, val, index)
 }

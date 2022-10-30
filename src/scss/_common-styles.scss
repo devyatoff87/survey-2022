@@ -1,3 +1,10 @@
+:root {
+    --brand-color: #8da9be;
+    --secondary-color: #ecbe1a;
+    --dark-color: #282828;
+    --secondary-color-hovered:#c5a019;
+}
+
 .custom-container {
     margin-top: 100px;
 }
@@ -17,4 +24,37 @@
 
 .border-light {
     border: 1px solid #cfcfcf;
+}
+
+    .btn {
+        background: var(--secondary-color);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--dark-color);
+        padding: 12px 56px;
+        border: none;
+        font-weight: 600;
+        &:hover {
+            background: var(--secondary-color-hovered);
+            color: white;
+        }
+    }
+
+    .warning-alert {
+        display: none;
+        background: #f1a3a3;
+        padding: 24px;
+        margin-top: 24px;
+        .inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h4 {
+                font-size: 18px;
+                color: black;
+            }
+        }
+        &.show {
+            display: block;
+    }
 }
