@@ -2,7 +2,7 @@ import { nextStep, validateEmail, validateNumbers, validateChars, validateMinAnd
 let val;
 
 export function checkValidness(elms, section, index) {
-
+    console.log(elms);
     for (const elm_ in elms) {
         const elm = elms[elm_];
         val = elms[elm_].value;

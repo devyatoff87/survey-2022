@@ -11,11 +11,11 @@ export function chooseCardValue(section) {
         }, 4000)
     }
 
-    if (section.id == "final" && section.classList.contains("show")) {
-        setTimeout(() => {
-            window.location.href = 'https://google.de';
-        }, 4000)
-    }
+    // if (section.id == "final" && section.classList.contains("show")) {
+    //     setTimeout(() => {
+    //         window.location.href = 'https://google.de';
+    //     }, 4000)
+    // }
 
     section.querySelectorAll(".custom-card").forEach((elm) => {
         elm.addEventListener("click", () => {

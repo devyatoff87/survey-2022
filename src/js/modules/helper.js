@@ -25,7 +25,7 @@ export function validateEmail(elm, val) {
     if (elm.dataset.type !== undefined && elm.dataset.type == "email") {
         let mayBeWarnAlert = elm.closest("section").querySelector(".warning-alert");
 
-        console.log("datatype.chars == email");
+        ("datatype.chars == email");
         const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!regex.test(val)) {
             if (mayBeWarnAlert !== null) {
@@ -38,7 +38,7 @@ export function validateEmail(elm, val) {
 }
 
 export function validateNumbers(elm, val) {
-    console.log(elm);
+    (elm);
     if (elm.dataset.type !== undefined && elm.dataset.type == "numbers") {
         let mayBeWarnAlert = elm.closest("section").querySelector(".warning-alert");
         val = parseInt(val)
@@ -57,7 +57,7 @@ export function validateChars(elm, val) {
     if (elm.dataset.type !== undefined && elm.dataset.type == "chars") {
         let mayBeWarnAlert = elm.closest("section").querySelector(".warning-alert");
 
-        console.log("datatype.chars == null");
+        ("datatype.chars == null");
 
         const regex = /^[a-zA-Z]*$/g;
         if (!regex.test(val)) {
@@ -87,7 +87,7 @@ export function validateMaxLength(elm, val) {
     if (elm.maxLength !== -1 && val.length > elm.maxLength) {
         let mayBeWarnAlert = elm.closest("section").querySelector(".warning-alert");
 
-        console.log("maxlength == null");
+        ("maxlength == null");
         if (mayBeWarnAlert !== null) {
             showWarning(elm, elm.dataset.msgMaxlength, mayBeWarnAlert);
 
@@ -100,7 +100,7 @@ export function validateMaxLength(elm, val) {
 export function validateMinLength(elm, val) {
     if (elm.minLength !== -1 && val.length < elm.minLength) {
         let mayBeWarnAlert = elm.closest("section").querySelector(".warning-alert");
-        console.log("minlength == null");
+        ("minlength == null");
         if (mayBeWarnAlert !== null) {
             showWarning(elm, elm.dataset.msgMinlength, mayBeWarnAlert);
         }
@@ -112,7 +112,7 @@ export function validateMinLength(elm, val) {
 export function validateIfNotEmpty(elm, val) {
     if (val == null || val == "" || val == undefined) {
         let mayBeWarnAlert = elm.closest("section").querySelector(".warning-alert");
-        console.log("val == null");
+        ("val == null");
         if (mayBeWarnAlert !== null) {
             showWarning(elm, elm.dataset.msgRequired, mayBeWarnAlert);
         }

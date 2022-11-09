@@ -8,11 +8,12 @@ export function chooseFormValue(section, index) {
     const btn = section.querySelector(".btn")
 
     let valsTemp = {}
-
     formEls.forEach((elm) => {
-        defineProperty(valsTemp, "element", elm)
-        elm.addEventListener("change", () => {
-            defineProperty(valsTemp, "element", elm)
+        defineProperty(valsTemp, "element", elm);
+        elm.addEventListener("change", (event) => {
+            if (!event.target.classList.contains("btn")) {
+                defineProperty(valsTemp, "element", elm);
+            }
         })
     })
 
@@ -20,6 +21,7 @@ export function chooseFormValue(section, index) {
         if (event.target.type == "submit") {
             event.preventDefault()
         }
+
 
         checkValidness(valsTemp, section, index);
 
